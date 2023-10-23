@@ -9,21 +9,19 @@ with open('data/noms_m1.csv', 'r', encoding='utf-8') as csvfile:
         students.append({'firstname': row[0], 'lastname': row[1]})
 
 
-print(students) # debug
-
 # melange de liste des etudiants 
 random.shuffle(students)
 
 
 # Methode pour avoir tous les prénoms
-for x in students:
-    print(x['lastname'])
+# for x in students:
+#    print(x['lastname'])
 
 # méthode pour avoir un prénom en particulier
-print(students[1]['lastname'])
+# print(students[1]['lastname'])
 
 variable = len (students)
-print(variable)
+# print(variable)
 if 'lastname ' in students :
     students.remove('lastname ')
 n = 0
