@@ -16,5 +16,5 @@ random.shuffle(students)
 
 
 #test affichage de tous les prénoms
-for student in students:
-    print(student['lastname'])
+for x in students:
+    print(x['lastname'])
