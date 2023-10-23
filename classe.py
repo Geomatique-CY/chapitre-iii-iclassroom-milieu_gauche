@@ -71,3 +71,5 @@ g3=''
 g3 = groupe2(n, g3)
 n+=2
 print(g1 + '    /   ' + g2 + '    /   ' + g3)
+
+#test pour branche
