@@ -13,4 +13,8 @@ print(students) # debug
 
 # melange de liste des etudiants 
 random.shuffle(students)
-print(students) # debug
+
+
+#test affichage de tous les prénoms
+for student in students:
+    print(student['lastname'])
