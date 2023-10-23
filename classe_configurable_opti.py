@@ -1,14 +1,11 @@
-import csv
-import random
+import csv,random
 
-nombres_lignes, nombres_groupes_par_ligne = 3, 3
-nombres_etudiants = {"groupe gauche": 3, "groupe milieu": 2, "groupe droit": 3}
+nombres_lignes, nombres_groupes_par_ligne,nombres_etudiants = 3, 3, {"groupe gauche": 3, "groupe milieu": 2, "groupe droit": 3}
 
-with open('data/noms_m1.csv', 'r', encoding='utf-8') as csvfile:
-    students = [{'firstname': row[0], 'lastname': row[1]} for row in csv.reader(csvfile, delimiter=';')]
+with open('data/noms_m1.csv', 'r', encoding='utf-8') as csvfile: students = [row[1] for row in csv.reader(csvfile, delimiter=';')]
+
 random.shuffle(students)
-
-eleve = lambda: students.pop()['lastname'] if students else "Personne"
+eleve = lambda: students.pop() if students else "Personne"
 
 classe = [{f"ligne{i+1}": {nom: [eleve() for _ in range(nombres)] for nom, nombres in nombres_etudiants.items()}}for i in range(nombres_lignes)]
 
