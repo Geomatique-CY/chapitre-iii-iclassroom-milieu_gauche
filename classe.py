@@ -21,3 +21,6 @@ for x in students:
 
 # méthode pour avoir un prénom en particulier
 print(students[1]['lastname'])
+
+variable = len (students)
+print(variable)
