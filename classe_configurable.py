@@ -4,37 +4,26 @@ import random
 # Configuration
 nombres_lignes = 3
 nombres_groupes_par_ligne = 3
-nombres_etudiants_gauche = 3
-nombres_etudiants_milieu = 2
-nombres_etudiants_droit = 3
+nombres_etudiants = {"groupe gauche": 3, "groupe milieu": 2, "groupe droit": 3}
 
 # Lecture du CSV contenant les noms/prénoms
-students = []
 with open('data/noms_m1.csv', 'r', encoding='utf-8') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=';')
-    for row in csvreader:
-        students.append({'firstname': row[0], 'lastname': row[1]})
+    students = [{'firstname': row[0], 'lastname': row[1]} for row in csvreader]
 
 # Mélange de la liste des étudiants
 random.shuffle(students)
 
-# méthode pour "prélever" un élève
+# Méthode pour "prélever" un élève
 def eleve():
     return students.pop()['lastname'] if students else "Personne"
 
-# remplissage de la classroommmm
+# Remplissage de la salle de classe
 classe = []
 for i in range(nombres_lignes):
     ligne = {}
-    for j in range(nombres_groupes_par_ligne):
-        nom_groupe = "groupe gauche" if j == 0 else "groupe milieu" if j == 1 else "groupe droit "
-        if nom_groupe == "groupe gauche":
-            nombres_etudiants = nombres_etudiants_gauche
-        elif nom_groupe == "groupe milieu":
-            nombres_etudiants = nombres_etudiants_milieu
-        else:
-            nombres_etudiants = nombres_etudiants_droit
-        groupe = [eleve() for _ in range(nombres_etudiants)]
+    for nom_groupe, nombre_etudiants in nombres_etudiants.items():
+        groupe = [eleve() for _ in range(nombre_etudiants)]
         ligne[nom_groupe] = groupe
     classe.append({f"ligne{i+1}": ligne})
 
