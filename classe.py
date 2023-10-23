@@ -21,6 +21,9 @@ for x in students:
 
 # méthode pour avoir un prénom en particulier
 print(students[1]['lastname'])
+
+variable = len (students)
+print(variable)
 if 'lastname ' in students :
     students.remove('lastname ')
 n=1
@@ -36,11 +39,11 @@ def groupe2(n, groupe) :
         groupe += students[n]['lastname']+ ' '
         n+=1
     return(groupe)
+for i in range (3) :
+    g1=''
+    g1 = groupe3(n, g1)
+    n+=3
 
-g1=''
-g1 = groupe3(n, g1)
-n+=3
-
-g2 = '
-g2'
-print(g1)
+    g2 = ''
+    g2 = groupe2(n, g2)
+    print(g1 + '        ' + g2)
