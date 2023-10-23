@@ -15,6 +15,9 @@ print(students) # debug
 random.shuffle(students)
 
 
-#test affichage de tous les prénoms
+# Methode pour avoir tous les prénoms
 for x in students:
     print(x['lastname'])
+
+# méthode pour avoir un prénom en particulier
+print(students[1]['lastname'])
