@@ -46,4 +46,9 @@ for i in range (3) :
 
     g2 = ''
     g2 = groupe2(n, g2)
-    print(g1 + '        ' + g2)
+    n+=2
+
+    g3=''
+    g3 = groupe3(n, g3)
+    n+=3
+    print(g1 + '        ' + g2 + '       ' + g3)
