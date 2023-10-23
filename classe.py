@@ -8,4 +8,9 @@ with open('data/noms_m1.csv', 'r', encoding='utf-8') as csvfile:
     for row in csvreader:
         students.append({'firstname': row[0], 'lastname': row[1]})
 
-print(students)
+
+print(students) # debug
+
+# melange de liste des etudiants 
+random.shuffle(students)
+print(students) # debug
